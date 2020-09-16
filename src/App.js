@@ -37,7 +37,7 @@ function App() {
 
 
   useEffect(() => {
-    localStorage.setItem('tasks', JSON.stringify(taskItems));
+    localStorage.setItem('tasks﻿', JSON.stringify(taskItems));
   }, [taskItems]);
 
   const createNewTask = taskName => {
