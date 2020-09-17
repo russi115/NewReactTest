@@ -7,8 +7,11 @@ export const TaskCreator = props => {
     const updateNewTaskValue = e => setNewTaskName(e.target.value);
 
     const createNewTask = () => {
-        props.callback(newTaskName);
-        setNewTaskName('');
+        if(newTaskName !== ''){
+            props.callback(newTaskName);
+            setNewTaskName('');
+        }else
+            alert('task empty')
     };
 
     return (
@@ -18,6 +21,7 @@ export const TaskCreator = props => {
                 className="form-control"
                 value={newTaskName}
                 onChange={updateNewTaskValue}
+                placeholder="Add new tasks by writing here"
                 />
                 <button className="btn btn-primary mt-1" onClick={createNewTask}>
                     Add
