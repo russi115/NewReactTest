@@ -3,9 +3,10 @@ import React from "react";
 export const TaskRow = (props) => (
   <tr key={props.task.name}>
     <td>{props.task.name}</td>
+    <td>{props.task.time}</td>
     <td>
       <input
-        className="float-right"
+        className="float float-right"
         type="checkbox"
         checked={props.task.done}
         onChange={() => props.toggleTask(props.task)}
